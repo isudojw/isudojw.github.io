@@ -1,19 +1,15 @@
-- Getting started 1
+- IT note
 
-  - [Quick Start 1](README.md)
+  - [Proxmox VE](proxmox_ve.md)
 
-  - [Quick Start 2](quickstart.md)
+  - [docsify](docsify.md)
 
-  - [Quick Start 3](quickstart.md)
+- Project
 
-- Proxmox VE
+- Figure
 
-  - [Quick Start 4](quickstart.md)
+    - [ALTER](figure_alter.md)
 
-  - [Quick Start 5](quickstart.md)
+    - [SKYTUBE](figure_skytube.md)
 
-  - [Quick Start 6](quickstart.md)
-
-- docsify
-
-  - [寫作模板](docsify/docsify-write-template.md)
+    - [GSC](figure_gsc.md)
