@@ -30,8 +30,24 @@ config:
 $ zpool replace -f rpool /dev/disk/by-id/ata-MB004000GWKGV_V1K30000-part3 /dev/disk/by-id/ata-MB004000GWKGV_V1K30002
 ```
 
-若新硬碟是顯示 `/dev/sdc` 之類的訊息, 則修復指令需要更改成這樣
+> 基本上就是 `zpool replace -f [pool_name] [舊硬碟位置] [新硬碟位置]`
+
+若新硬碟是顯示 `/dev/sdc` 之類的訊息, 直接套用就可以了 :
 
 ```shell
 $ zpool replace -f rpool /dev/disk/by-id/ata-MB004000GWKGV_V1K30000-part3 /dev/sdc
+```
+
+修復時可以使用 `zpool status -v` 查詢進度, 不過這邊比較建議使用 web gui, 會比較方便點
+
+## VM 強制解除鎖定
+
+當 VM 無法透過 `qm unlock` 指令解鎖時, 可以透過下面操作強制解除
+
+```shell
+# 切換到此資料夾
+$ cd /run/lock/qemu-server/
+
+# 移除有問題的虛擬機檔案, 這邊使用編號 101 VM 做範例
+rm -rf ./lock-101.conf
 ```
